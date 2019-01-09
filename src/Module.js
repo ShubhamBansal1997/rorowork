@@ -7,7 +7,7 @@ import Exclaimation from './assets/exclaimation.svg';
 
 class Module extends Component {
 	render() {
-		let { colorDark, color, name, type, index, total } = this.props;
+		let { colorDark, color, name, type, index, total, tagId, mandatory } = this.props;
 		let type1 = ((type==='open'&&index===0)?type:((type==='close'&&index===total)?type:"normal"));
 		return (
 			<React.Fragment key={index}>
@@ -20,8 +20,8 @@ class Module extends Component {
 			   
 			    {type1==='open'?null:<line x1={`${0+(100*index)}`} y1="155" x2={`${30+(100*index)}`} y2="155" stroke={colorDark} strokeWidth="2" />}
 				{type1==='close'?null:<line x1={`${70+(100*index)}`} y1="155" x2={`${100+(100*index)}`} y2="155" stroke={colorDark} strokeWidth="2" />}
-				<image xlinkHref={Check} x={`${40+(100*index)}`} y="145" height="20px" width="20px"/>
-		    	<foreignObject x={`${10+(100*index)}`} y="60" width="90" height="200">
+				{tagId!==null?(mandatory===true?<image xlinkHref={Exclaimation} x={`${40+(100*index)}`} y="145" height="20px" width="20px"/>:<image xlinkHref={Adjust} x={`${40+(100*index)}`} y="145" height="20px" width="20px"/>):null}
+		    	<foreignObject x={`${10+(100*index)}`} y="50" width="90" height="200">
 					<p xmlns="http://www.w3.org/1999/xhtml" style={{ fontFamily: "Helvetica", fontSize: "0.85em",textAlign: "center", color: colorDark}}>{name}</p>
 				</foreignObject>
 			</React.Fragment>

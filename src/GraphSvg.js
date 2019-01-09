@@ -18,9 +18,11 @@ class GraphSvg extends Component {
 							index={index}
 							total={modules.length-1}
 							key={index}
+							tagId={value.tagId===undefined?null:value.tagId}
+							mandatory={value.mandatory===undefined?null:value.mandatory}
 						/>
 					))}
-					<foreignObject x="0" y="0" width={modules.length*100} height="200">
+					<foreignObject x="0" y="-10" width={modules.length*100} height="200">
 				      <p xmlns="http://www.w3.org/1999/xhtml" style={{ fontFamily: "Helvetica", fontSize: "1.1em",textAlign: "center", color: colorDark}}>{name}</p>
 				    </foreignObject>
 			  	</g>

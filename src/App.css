@@ -1,9 +1,13 @@
 .App {
   text-align: center;
   background-color: rgb(233, 237, 248);
+  height: 16em;
 }
 
-
+svg {
+  display: inline-block;
+  margin-left: 2px;
+}
 
 
 .App-logo {

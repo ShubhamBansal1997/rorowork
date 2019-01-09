@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <h2 style={{ textAlign: 'left', color: 'rgb(83, 129, 212)'}}>TSS Academy - Navigation</h2>
+          <h2 style={{ textAlign: 'left', color: 'rgb(83, 129, 212)', marginTop: '5px', marginLeft: '5px'}}>TSS Academy - Navigation</h2>
           {boxes.map((value, index) => {
             return (
              <GraphSvg
